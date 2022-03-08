@@ -1,0 +1,119 @@
+.body-container {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 72px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.125em;
+  color: #333;
+  line-height: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+  color: #000;
+}
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #09f;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #09f;
+}
+
+.row-container {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  height: 2.5em;
+  gap: 1em;
+}
+
+.divider {
+  margin-top: 2em;
+  border-top: 1px solid #bbb;
+}
+
+.save {
+  height: 1.5em;
+  width: 3em;
+  transition: 0.2s;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0.25em;
+  text-align: center;
+}
+
+.save-disabled {
+  height: 1.5em;
+  width: 3em;
+  transition: 0.2s;
+  background-color: white;
+  color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 0.25em;
+  text-align: center;
+  pointer-events: none;
+}
+
+.save:hover {
+  background-color: black;
+  color: white;
+}
+
+.save-cont {
+  display: flex;
+  justify-content: end;
+}
+
+.input {
+  width: 99%;
+  height: 10em;
+  font-size: large;
+  resize: none;
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.editing {
+  margin-top: 1.5em;
+}
+
+.default {
+  margin-top: 1.5em;
+  border: 0;
+  pointer-events: none;
+}
+
+.back {
+  color: grey;
+}
+
+.back:hover {
+  text-decoration: none;
+}
