@@ -24,6 +24,9 @@
 (defn delete-note [id]
   (str (json/write-str (swap! notes-collection dissoc id))))
 
+(defn delete-multiple [ids]
+  (str (json/write-str (reset! notes-collection (apply dissoc @notes-collection ids)))))
+
 ;; ---- init some notes------
 (add-note {:note "next level liiba laaaba" :done false})
 (add-note {:note "next level liiba laaaba v 2" :done false})

@@ -33,6 +33,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 li {
@@ -40,6 +41,9 @@ li {
   white-space: nowrap;
   overflow: hidden;
   color: #09f;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .row-container {
@@ -116,4 +120,14 @@ li {
 
 .back:hover {
   text-decoration: none;
+}
+
+.done {
+  text-decoration: line-through;
+  color: grey;
+  pointer-events: none;
+}
+
+.hidden {
+  visibility: hidden;
 }

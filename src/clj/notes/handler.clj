@@ -54,22 +54,32 @@
      ["/about" {:get {:handler index-handler}}]
      ["/new" {:get {:handler index-handler}}]
      ["/api"
+
       ["/notes" {:get {:handler notes-get-handler}
                  :post {:parameters {:body {:note string? :done boolean?}}
                         :handler (fn [{{body :body} :parameters}]
                                    {:status 201
                                     :headers {"Content-Type" "application/json"}
                                     :body (n/add-note body)})}}]
+
+      ["/purge" {:post {:parameters {:body {:ids [int?]}}
+                        :handler (fn [{{{ids :ids} :body} :parameters}]
+                                   {:status 200
+                                    :headers {"Content-Type" "application/json"}
+                                    :body (n/delete-multiple ids)})}}]
+
       ["/notes/:id" {:get {:parameters {:path {:id int?}}
                            :handler (fn [{{{id :id} :path} :parameters}]
                                       {:status 200
                                        :headers {"Content-Type" "application/json"}
                                        :body (n/get-by-id id)})}
+
                      :put {:parameters {:body {:id int? :note string? :done boolean?} :path {:id int?}}
                            :handler (fn [{{body :body {id :id} :path} :parameters}]
                                       {:status 200
                                        :headers {"Content-Type" "application/json"}
                                        :body (n/update-note body id)})}
+
                      :delete {:parameters {:path {:id int?}}
                               :handler (fn [{{{id :id} :path} :parameters}]
                                          {:status 200
